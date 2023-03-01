@@ -4,20 +4,27 @@ public class EmpWages {
   public static final int IS_FULL_TIME = 1;
   public static final int IS_PART_TIME = 2;
   public static final int WAGE_PER_HOUR = 20;
-  public static int WORKING_DAY_PER_MONTH = 20;
-    int empHrs = 0;
+  public static int MAX_DAY_PER_MONTH = 20;
+
+  public static int MAX_HRS_IN_A_MONTH = 100;
     int wageForMonth = 0;
-    int dailyWage = 0;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Employee  Wage Computation :");
         EmpWages empWages = new EmpWages();
-        empWages.checkDailyEmpWage();
-        empWages.monthlyWage();
+        System.out.println("Wage for Month : "+empWages.totalWage(empWages.wageForMonth));
+
     }
 
-    public void checkDailyEmpWage() {
-        for (int days=0; days< WORKING_DAY_PER_MONTH; days++) {
+    public int totalWage(int wageForMonth) {
+        int numberOfWorkingDays = 0;
+        int totalWorkingHrs = 0;
+        int empHrs = 0;
+        int dailyWage = 0;
+
+
+        while (numberOfWorkingDays < MAX_DAY_PER_MONTH && totalWorkingHrs < MAX_HRS_IN_A_MONTH) {
+            numberOfWorkingDays++;
 
             double empCheck = Math.floor(Math.random() * 10) % 3;
             switch ((int) empCheck) {
@@ -34,14 +41,17 @@ public class EmpWages {
                     System.out.println("Employee is Absent : ");
                     break;
             }
-            dailyWage = (empHrs * WAGE_PER_HOUR) ;
-            System.out.println("Daily wage for employee : "+dailyWage+ "$");
-            wageForMonth  = dailyWage + wageForMonth;
+
+            dailyWage = (empHrs * WAGE_PER_HOUR);
+            totalWorkingHrs = (empHrs + totalWorkingHrs);
+            System.out.println("Daily wage for employee : " + dailyWage + "$");
+            wageForMonth = dailyWage + wageForMonth;
         }
+        return wageForMonth;
+
+
 
     }
 
-    public void monthlyWage() {
-        System.out.println("Wage for month "+wageForMonth);
-    }
+
 }
