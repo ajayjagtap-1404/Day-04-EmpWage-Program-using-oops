@@ -49,8 +49,6 @@ public class EmpWages {
         }
         return wageForMonth;
 
-
-
     }
 
 
