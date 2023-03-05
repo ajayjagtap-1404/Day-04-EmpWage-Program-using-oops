@@ -26,7 +26,6 @@ public class EmpWagesMain {
     }
 
 
-
     public void totalWage() {
         for (int i = 1; i <= MAX_WORKING_DAYS; i++) {
             if (total_Working_Days < MAX_WORKING_DAYS && total_Working_Hours < MAX_WORKING_HOURS) {
@@ -40,7 +39,7 @@ public class EmpWagesMain {
                 System.out.println();
             }
         }
-        System.out.println("The company name "+companyName+" has Total Wage for the month is: " + wageForMonth + " Total working days are: "
+        System.out.println("The company name " + companyName + " has Total Wage for the month is: " + wageForMonth + " Total working days are: "
                 + total_Working_Days + " Total working hours are: " + total_Working_Hours);
     }
 
@@ -72,6 +71,7 @@ public class EmpWagesMain {
                 break;
         }
     }
+
     @Override
     public String toString() {
         return "Employee_Wage_Program's Company Name is: " + companyName + " and it's wage for the month is: " + wageForMonth;
