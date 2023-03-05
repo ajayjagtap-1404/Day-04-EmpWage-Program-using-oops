@@ -40,7 +40,7 @@ public class EmpWagesMain {
                 System.out.println();
             }
         }
-        System.out.println("Total Wage for the month is: " + wageForMonth + " Total working days are: "
+        System.out.println("The company name "+companyName+" has Total Wage for the month is: " + wageForMonth + " Total working days are: "
                 + total_Working_Days + " Total working hours are: " + total_Working_Hours);
     }
 
@@ -71,6 +71,10 @@ public class EmpWagesMain {
                 empHrs = 0;
                 break;
         }
+    }
+    @Override
+    public String toString() {
+        return "Employee_Wage_Program's Company Name is: " + companyName + " and it's wage for the month is: " + wageForMonth;
     }
 
 
